@@ -1,0 +1,69 @@
+# neuron model
+mod:
+  I:
+    a: 60
+    b: 15 #10
+    c: 4
+    tau_v1: 17
+    tau_v2: 17
+    tau_u: 10
+    v_reset: -47 #-35 #-45
+  E:
+
+net:
+  NE1: 800
+  NE2: 0
+  NI1: 200
+  NI2: 0
+
+  connectTime: 0
+  inE: 180
+  noise:
+    var: 400 #200
+    mean: 100
+    kE1: 0
+    kE2: 0
+    kNE1: 1
+    kNE2: 1
+
+  # WEIGTHS
+  sG: 0
+  w:
+    var: 1
+    mu: 1
+    distrib: 'lognormal_gap'
+    k: 40
+
+    E1E1: 500
+    E1E2: 100
+    E1I1: 300
+    E1I2: 100
+
+    E2E1: 100
+    E2E2: 500
+    E2I1: 100
+    E2I2: 300
+
+    I1E1: -5000
+    I1E2: -100
+    I1I1: -80
+    I1I2: -100
+
+    I2E1: -100
+    I2E2: -5000
+    I2I1: -100
+    I2I2: -80
+
+  g1: 8
+  g2: 8
+
+sim:
+  dt: 0.1
+  both: 0
+
+plast:
+  ratio: 2
+  startPlast: 100000
+  stabTime: 100000
+
+
